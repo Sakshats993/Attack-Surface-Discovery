@@ -1,4 +1,4 @@
-```markdown
+
 # 🔍 Automated Attack Surface Discovery Tool
 
 [![Python](https://img.shields.io/badge/Python-3.7%2B-blue)](https://www.python.org/)
@@ -304,7 +304,4 @@ Educational and authorized security testing only.
 * Open-source contributors
 
 ---
-
-<p align="center"><strong>⚡ Built for Security Professionals by Security Professionals ⚡</strong></p>
-<p align="center">Made with ❤️ for the security community</p>
-<p align="center"><i>Always hack ethically.</i></p>
+<p align="center"><i>There’s no silver bullet solution with cyber security, a layered defense is the only viable defense.</i></p>
