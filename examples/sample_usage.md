@@ -1,192 +1,288 @@
-# Sample Usage Guide
 
-## Installation
+# 📘 Sample Usage Guide – Automated Attack Surface Discovery Tool
 
-1.**Install Nmap**
-   # Ubuntu/Debian
-   sudo apt-get update
-   sudo apt-get install nmap
+This guide explains how to install, run, test, and verify the **Automated Attack Surface Discovery Tool**.
 
-   # CentOS/RHEL/Fedora
-   sudo yum install nmap
+## 🔧 Installation
 
-   # macOS
-   brew install nmap
+### 1️⃣ Install Nmap
 
-   # Windows
-   # Download from https://nmap.org/download.html
-
-2.**Clone the Project**
-   git clone <repository-url>
-   cd attack-surface-discovery
-
- 3.**Make Script Executable (Linux/macOS)**
-   chmod +x attack_surface_discovery.py
-
-4.**Basic Usage Examples**
-1. Scan a Single IP Address
-Bash
-python attack_surface_discovery.py 192.168.1.1
-2. Scan a Domain
-Bash
-python attack_surface_discovery.py example.com
-3. Scan an IP Range
-Bash
-python attack_surface_discovery.py 192.168.1.0/24
-4. Quick Scan (Faster, Less Detailed)
-Bash
-python attack_surface_discovery.py -s quick 192.168.1.1
-5. Aggressive Scan (More Detailed)
-Bash
-python attack_surface_discovery.py -s aggressive scanme.nmap.org
-6. Top 1000 Ports Scan
-Bash
-python attack_surface_discovery.py -s top-ports 192.168.1.0/24
-7. Verbose Output
-Bash
-python attack_surface_discovery.py -v 192.168.1.1
-
-Output Files
-All scan results are saved in the reports/ directory:
-Text Report: attack_surface_<target>_<timestamp>.txt
-HTML Report: attack_surface_<target>_<timestamp>.html
-JSON Data: attack_surface_<target>_<timestamp>.json
-Raw Nmap Output: nmap_raw_<target>_<timestamp>.txt
-
-**5. File: `.gitkeep` files**
-Create empty `.gitkeep` files in:
-- `reports/.gitkeep`
-- `templates/.gitkeep`
-These keep empty directories in version control.
-
-## 🚀 HOW TO RUN THE PROJECT
-### **Step 1: Setup Project Directory**
+#### Ubuntu / Debian
 ```bash
-# Create main project directory
+sudo apt-get update
+sudo apt-get install nmap
+````
+
+#### CentOS / RHEL / Fedora
+
+```bash
+sudo yum install nmap
+```
+
+#### macOS
+
+```bash
+brew install nmap
+```
+
+#### Windows
+
+Download and install from:
+[https://nmap.org/download.html](https://nmap.org/download.html)
+
+Verify installation:
+
+```bash
+nmap --version
+```
+
+---
+
+### 2️⃣ Clone the Project
+
+```bash
+git clone <repository-url>
+cd attack-surface-discovery
+```
+
+---
+
+### 3️⃣ Make Script Executable (Linux / macOS)
+
+```bash
+chmod +x attack_surface_discovery.py
+```
+
+---
+
+## 🚀 Basic Usage Examples
+
+### 1. Scan a Single IP Address
+
+```bash
+python attack_surface_discovery.py 192.168.1.1
+```
+
+### 2. Scan a Domain
+
+```bash
+python attack_surface_discovery.py example.com
+```
+
+### 3. Scan an IP Range
+
+```bash
+python attack_surface_discovery.py 192.168.1.0/24
+```
+
+### 4. Quick Scan (Faster, Less Detailed)
+
+```bash
+python attack_surface_discovery.py -s quick 192.168.1.1
+```
+
+### 5. Aggressive Scan (More Detailed)
+
+```bash
+python attack_surface_discovery.py -s aggressive scanme.nmap.org
+```
+
+### 6. Top 1000 Ports Scan
+
+```bash
+python attack_surface_discovery.py -s top-ports 192.168.1.0/24
+```
+
+### 7. Verbose Output
+
+```bash
+python attack_surface_discovery.py -v 192.168.1.1
+```
+
+---
+
+## 📂 Output Files
+
+All scan results are saved in the `reports/` directory:
+
+* **Text Report**
+  `attack_surface_<target>_<timestamp>.txt`
+
+* **HTML Report**
+  `attack_surface_<target>_<timestamp>.html`
+
+* **JSON Data**
+  `attack_surface_<target>_<timestamp>.json`
+
+* **Raw Nmap Output**
+  `nmap_raw_<target>_<timestamp>.txt`
+
+---
+
+## 📁 .gitkeep Files
+
+Create empty `.gitkeep` files to preserve directory structure:
+
+```
+reports/.gitkeep
+templates/.gitkeep
+```
+
+---
+
+## 🚀 HOW TO RUN THE PROJECT (From Scratch)
+
+### Step 1: Setup Project Directory
+
+```bash
 mkdir attack-surface-discovery
 cd attack-surface-discovery
 
-# Create subdirectories
 mkdir reports
 mkdir examples
 mkdir templates
 
-# Create .gitkeep files to maintain directory structure
 touch reports/.gitkeep
 touch templates/.gitkeep
 ```
-**Step 2: Create All Files**
-Create attack_surface_discovery.py and paste the main script code
-Create report_generator.py and paste the report module code
-Create requirements.txt and paste the requirements
-Create examples/sample_usage.md and paste the usage guide
-Copy the original README.md to the root directory
 
-**Step 3: Install Prerequisites**
+---
+
+### Step 2: Create All Files
+
+* `attack_surface_discovery.py` → Main script
+* `report_generator.py` → Report generation logic
+* `requirements.txt` → Dependencies
+* `examples/sample_usage.md` → This file
+* `README.md` → Project documentation
+
+---
+
+### Step 3: Install Prerequisites
+
 ```bash
-# Install Nmap (choose based on your OS)
-
-# For Ubuntu/Debian:
-sudo apt-get update
-sudo apt-get install nmap
-
-# For CentOS/RHEL:
-sudo yum install nmap
-
-# For macOS:
-brew install nmap
-
-# For Windows:
-# Download installer from https://nmap.org/download.html
-
-# Verify Nmap installation
 nmap --version
+python --version
 ```
-**Step 4: Make Script Executable (Linux/macOS)**
+
+---
+
+### Step 4: Make Script Executable
+
 ```bash
 chmod +x attack_surface_discovery.py
 ```
-**Step 5: Run the Tool**
-Basic Usage:
+
+---
+
+### Step 5: Run the Tool
+
+#### Basic Usage
+
 ```bash
-# Scan a single IP
 python attack_surface_discovery.py 192.168.1.1
-# Scan a domain
 python attack_surface_discovery.py scanme.nmap.org
-# Scan an IP range
 python attack_surface_discovery.py 192.168.1.0/24
 ```
-Advanced Usage:
+
+#### Advanced Usage
+
 ```bash
-# Quick scan (faster)
 python attack_surface_discovery.py -s quick scanme.nmap.org
-# Aggressive scan (detailed)
 python attack_surface_discovery.py -s aggressive 192.168.1.1
-# Top 1000 ports only
 python attack_surface_discovery.py -s top-ports example.com
-# Verbose output
 python attack_surface_discovery.py -v scanme.nmap.org
-# Combine option
 python attack_surface_discovery.py -s quick -v 192.168.1.0/24
 ```
-**Step 6: Check Results**
-After running a scan, check the reports/ directory for:
 
-Text Report - Quick summary in terminal-friendly format
-HTML Report - Beautiful web report (open in browser)
-JSON Data - Structured data for further processing
-Raw Nmap Output - Original Nmap scan results
+---
+
+### Step 6: Check Results
 
 ```bash
-# List generated reports
 ls -la reports/
-# View text report
 cat reports/attack_surface_*.txt
-# Open HTML report in browser (Linux)
+```
+
+Open HTML report:
+
+#### Linux
+
+```bash
 xdg-open reports/attack_surface_*.html
-# Open HTML report in browser (macOS)
+```
+
+#### macOS
+
+```bash
 open reports/attack_surface_*.html
-# Open HTML report in browser (Windows)
+```
+
+#### Windows
+
+```bash
 start reports/attack_surface_*.html
 ```
-**📝 TESTING THE PROJECT**
-Test Commands (Safe Targets)
+
+---
+
+## 🧪 Testing the Project (Safe Targets)
+
 ```bash
-# Test 1: Scan Nmap's official test server
+# Nmap official test server
 python attack_surface_discovery.py scanme.nmap.org
-# Test 2: Scan localhost
+
+# Localhost
 python attack_surface_discovery.py 127.0.0.1
-# Test 3: Quick scan of local network (adjust IP range)
+
+# Quick scan of local network
 python attack_surface_discovery.py -s quick 192.168.1.0/24
-# Test 4: Verbose mode
+
+# Verbose mode
 python attack_surface_discovery.py -v scanme.nmap.org
 ```
-**⚠️IMPORTANT NOTES**
-Permissions: Some scan types require root/admin privileges:
-```Bash
+
+---
+
+## ⚠️ Important Notes
+
+### Permissions
+
+Some scans require elevated privileges:
+
+```bash
 sudo python attack_surface_discovery.py 192.168.1.1
 ```
-Legal Warning: Only scan systems you own or have permission to test
-Firewall Issues: Some networks block Nmap scans
 
-Scan Duration:
-Quick scans: 1-2 minutes
-Default scans: 5-10 minutes
-Aggressive scans: 15-30 minutes
-Large IP ranges: Can take hours
+### Legal Warning
 
-**🎯 Expected Output Example**
-When you run the tool, you'll see:
-text
+⚠️ Only scan systems you **own** or have **explicit permission** to test.
+
+### Scan Duration
+
+* Quick scans: **1–2 minutes**
+* Default scans: **5–10 minutes**
+* Aggressive scans: **15–30 minutes**
+* Large IP ranges: **May take hours**
+
+---
+
+## 🎯 Expected Output Example
+
+```text
 ╔═══════════════════════════════════════════════════════╗
 ║     AUTOMATED ATTACK SURFACE DISCOVERY TOOL           ║
 ║           Powered by Nmap & Python                    ║
 ╚═══════════════════════════════════════════════════════╝
+
 [+] Valid target detected: scanme.nmap.org (Type: domain)
 [*] Starting Nmap scan on scanme.nmap.org
 [*] Scan type: default
 [*] Timestamp: 2024-01-15 14:30:00
-[+] Raw Nmap output saved to: reports/nmap_raw_scanme_nmap_org_20240115_143000.txt
+
+[+] Raw Nmap output saved to:
+    reports/nmap_raw_scanme_nmap_org_20240115_143000.txt
+
 ============================================================
 ATTACK SURFACE DISCOVERY SUMMARY
 ============================================================
@@ -198,7 +294,17 @@ Total Hosts Scanned: 1
 Live Hosts Found: 1
 Total Open Ports: 5
 ------------------------------------------------------------
-[+] Text report saved to: reports/attack_surface_scanme_nmap_org_20240115_143000.txt
-[+] HTML report saved to: reports/attack_surface_scanme_nmap_org_20240115_143000.html
-[+] JSON data saved to: reports/attack_surface_scanme_nmap_org_20240115_143000.json
+
+[+] Text report saved to:
+    reports/attack_surface_scanme_nmap_org_20240115_143000.txt
+[+] HTML report saved to:
+    reports/attack_surface_scanme_nmap_org_20240115_143000.html
+[+] JSON data saved to:
+    reports/attack_surface_scanme_nmap_org_20240115_143000.json
+
 [+] Attack surface discovery completed successfully!
+```
+
+---
+
+<p align="center"><strong>⚡ Happy Ethical Hacking ⚡</strong></p>
