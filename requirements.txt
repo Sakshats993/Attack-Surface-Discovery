@@ -1,0 +1,25 @@
+# Core dependencies for Attack Surface Discovery Tool
+# Python 3.7+ required
+
+# No external Python packages required for basic functionality
+# The tool uses Python standard library modules:
+# - subprocess (for running Nmap)
+# - argparse (for command line parsing)
+# - json (for data serialization)
+# - re (for regex pattern matching)
+# - ipaddress (for IP validation)
+# - datetime (for timestamps)
+# - os (for file operations)
+# - sys (for system operations)
+
+# Optional dependencies for enhanced features:
+# python-nmap==0.7.1  # For advanced Nmap integration (optional)
+# jinja2==3.1.2  # For advanced templating (optional)
+# colorama==0.4.6  # For colored terminal output (optional)
+
+# System requirements:
+# - Nmap must be installed on the system
+# - Download from: https://nmap.org/download.html
+
+# Installation:
+# pip install -r requirements.txt
