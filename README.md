@@ -31,8 +31,8 @@ This project is designed for **cybersecurity students, cloud security engineers,
 ```
 
 ╔═══════════════════════════════════════════════════════╗
-║   AUTOMATED ATTACK SURFACE DISCOVERY TOOL              ║
-║   Powered by Nmap & Python                             ║
+║   AUTOMATED ATTACK SURFACE DISCOVERY TOOL             ║
+║   Powered by Nmap & Python                            ║
 ╚═══════════════════════════════════════════════════════╝
 
 ````
@@ -99,7 +99,7 @@ attack-surface-discovery/
 #### Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/attack-surface-discovery.git
+git clone https://github.com/Sakshats993/attack-surface-discovery.git
 cd attack-surface-discovery
 ```
 
