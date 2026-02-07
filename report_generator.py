@@ -29,162 +29,162 @@ class ReportGenerator:
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Attack Surface Discovery Report</title>
     <style>
-        * {
+        * {{
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-        }
+        }}
         
-        body {
+        body {{
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             padding: 20px;
-        }
+        }}
         
-        .container {
+        .container {{
             max-width: 1200px;
             margin: 0 auto;
             background: white;
             border-radius: 15px;
             box-shadow: 0 20px 60px rgba(0,0,0,0.3);
             overflow: hidden;
-        }
+        }}
         
-        .header {
+        .header {{
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             padding: 30px;
             text-align: center;
-        }
+        }}
         
-        .header h1 {
+        .header h1 {{
             font-size: 2.5em;
             margin-bottom: 10px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-        }
+        }}
         
-        .header p {
+        .header p {{
             font-size: 1.1em;
             opacity: 0.9;
-        }
+        }}
         
-        .summary-section {
+        .summary-section{{
             padding: 30px;
             background: #f8f9fa;
             border-bottom: 2px solid #e9ecef;
-        }
+        }}
         
-        .summary-grid {
+        .summary-grid {{
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
             margin-top: 20px;
-        }
+        }}
         
-        .summary-card {
+        .summary-card {{
             background: white;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.08);
             text-align: center;
             transition: transform 0.3s;
-        }
+        }}
         
-        .summary-card:hover {
+        .summary-card:hover {{
             transform: translateY(-5px);
             box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-        }
+        }}
         
-        .summary-card h3 {
+        .summary-card h3 {{
             color: #667eea;
             font-size: 2em;
             margin-bottom: 5px;
-        }
+        }}
         
-        .summary-card p {
+        .summary-card p {{
             color: #6c757d;
             font-size: 0.9em;
             text-transform: uppercase;
             letter-spacing: 1px;
-        }
+        }}
         
-        .content-section {
+        .content-section {{
             padding: 30px;
-        }
+        }}
         
-        .section-title {
+        .section-title {{
             font-size: 1.8em;
             color: #333;
             margin-bottom: 20px;
             padding-bottom: 10px;
             border-bottom: 3px solid #667eea;
-        }
+        }}
         
-        .host-card {
+        .host-card {{
             background: white;
             border: 1px solid #dee2e6;
             border-radius: 10px;
             margin-bottom: 20px;
             overflow: hidden;
             box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-        }
+        }}
         
-        .host-header {
+        .host-header {{
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             padding: 15px;
             font-size: 1.2em;
             font-weight: bold;
-        }
+        }}
         
-        .host-body {
+        .host-body {{
             padding: 20px;
-        }
+        }}
         
-        .service-table {
+        .service-table {{
             width: 100%;
             border-collapse: collapse;
             margin-top: 15px;
-        }
+        }}
         
-        .service-table th {
+        .service-table th {{
             background: #f8f9fa;
             color: #495057;
             padding: 12px;
             text-align: left;
             font-weight: 600;
             border-bottom: 2px solid #dee2e6;
-        }
+        }}
         
-        .service-table td {
+        .service-table td {{
             padding: 10px 12px;
             border-bottom: 1px solid #dee2e6;
-        }
+        }}
         
-        .service-table tr:hover {
+        .service-table tr:hover {{
             background: #f8f9fa;
-        }
+        }}
         
-        .port-badge {
+        .port-badge {{
             background: #667eea;
             color: white;
             padding: 3px 8px;
             border-radius: 5px;
             font-weight: bold;
             font-size: 0.9em;
-        }
+        }}
         
-        .state-open {
+        .state-open {{
             color: #28a745;
             font-weight: bold;
-        }
+        }}
         
-        .services-summary {
+        .services-summary {{
             margin-top: 30px;
-        }
+        }}
         
-        .service-tag {
+        .service-tag {{
             display: inline-block;
             background: #667eea;
             color: white;
@@ -192,37 +192,37 @@ class ReportGenerator:
             border-radius: 20px;
             margin: 5px;
             font-size: 0.9em;
-        }
+        }}
         
-        .footer {
+        .footer {{
             background: #f8f9fa;
             padding: 20px;
             text-align: center;
             color: #6c757d;
             font-size: 0.9em;
-        }
+        }}
         
-        .timestamp {
+        .timestamp {{
             color: #667eea;
             font-weight: bold;
-        }
+        }}
         
-        .no-data {
+        .no-data {{
             text-align: center;
             padding: 40px;
             color: #6c757d;
             font-style: italic;
-        }
+        }}
         
-        @media (max-width: 768px) {
-            .summary-grid {
+        @media (max-width: 768px) {{
+            .summary-grid {{
                 grid-template-columns: 1fr;
-            }
+            }}
             
-            .header h1 {
+            .header h1 {{
                 font-size: 1.8em;
-            }
-        }
+            }}
+        }}
     </style>
 </head>
 <body>
@@ -313,7 +313,8 @@ class ReportGenerator:
             formatted_timestamp = timestamp
         
         # Fill the template
-        html_content = self.html_template.format(
+        try:
+            html_content = self.html_template.format(
             total_hosts=total_hosts,
             hosts_up=hosts_up,
             open_ports=open_ports,
@@ -325,6 +326,10 @@ class ReportGenerator:
             services_content=services_content,
             report_timestamp=datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         )
+        except Exception as e:
+            print("FORMAT ERROR:", e)
+            print(self.html_template)
+            raise
         
         # Save the report
         with open(output_file, 'w') as f:
