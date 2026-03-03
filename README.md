@@ -304,4 +304,12 @@ Educational and authorized security testing only.
 * Open-source contributors
 
 ---
+## 👥 Authors
+
+- **🎓 Project Lead:** [Swasthi Kunder](https://github.com/swasthikunder)  
+- **🔧 Contributor:** [Sakshat S](https://github.com/Sakshats993)
+
+For collaboration or questions, feel free to reach out via GitHub.
+
+[![Status: Complete](https://img.shields.io/badge/Status-Complete-brightgreen)]()
 <p align="center"><i>There’s no silver bullet solution with cyber security, a layered defense is the only viable defense.</i></p>
